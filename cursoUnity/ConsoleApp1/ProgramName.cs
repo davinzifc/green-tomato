@@ -8,22 +8,9 @@ playerName = Console.ReadLine();
 playerName =  string.IsNullOrWhiteSpace(playerName)? "Desconocido" : playerName;
 Console.WriteLine($"Hola, {playerName}!");*/
 
-
-Console.WriteLine("Cual es tu nombre?");
-string? playerName01 = Console.ReadLine();
-playerName01 =  string.IsNullOrWhiteSpace(playerName01)? "<Not Provided>" : playerName01;
-Console.WriteLine("Cual es tu nivel?");
-string? tempPlayerLevel = Console.ReadLine();
-string notNullLevel = string.IsNullOrWhiteSpace(tempPlayerLevel)? "1" : tempPlayerLevel;
-int playerLevel01 = int.Parse(Regex.IsMatch(notNullLevel, @"^\d+$")? notNullLevel: "1");
-
-
-PlayerNames player01 = new PlayerNames(playerName01, playerLevel01);
-Console.WriteLine($"Hola, {player01.Name}! Tu nivel es {player01.Level}");
-
 namespace PlayerModule
 {
-    class PlayerNames{
+    public class PlayerNames{
     private string name;
     private int level;
 
@@ -41,7 +28,7 @@ namespace PlayerModule
         get{return this.level;}
         set{this.level = value;}
     }
-
-}
+    
+    }
 
 }
